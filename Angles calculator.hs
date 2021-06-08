@@ -7,7 +7,7 @@ Autores:Eric Alpizar.
         Natalia Vargas.
         Patrick Vindas.
 
-Fecha de ultima modificación: 11/05/2021.
+Fecha de ultima modificación: 07/06/2021.
 -}
 
 import Data.List
