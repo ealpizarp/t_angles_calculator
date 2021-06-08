@@ -1,13 +1,18 @@
+{-
+
+                                            Tecnológico de Costa Rica
+                                Proyecto Programado Lenguajes de programacion (IC4700)
+Autores:Eric Alpizar.
+        Jacob Picado.
+        Natalia Vargas.
+        Patrick Vindas.
+
+Fecha de ultima modificación: 11/05/2021.
+-}
 
 import Data.List
 import System.IO
 import Debug.Trace
-
-
-main = do
-
-    putStrLn "Welcome to the internal angles calculator"
-
 
 
 
@@ -139,13 +144,13 @@ computeTriangleAngles (x1, y1) (x2, y2) (x3, y3)
 
     -- Checks if the three points are collinear or not
 
-    | collinearPoints (x1, y1) (x2, y2) (x3, y3) == True = "The three given points are collinear \n"
+    | collinearPoints (x1, y1) (x2, y2) (x3, y3) == True = "Los puntos ingresados son colineales \n"
 
-    | otherwise =   "The calculations for the angles are the following: " ++ "\n" ++
-                    "Theta P = " ++ show thetaP ++ 
-                    "\nTheta Q = " ++ show thetaQ ++
-                    "\nTheta R = " ++ show thetaR ++
-                    "\nSum of angles = " ++ show sumofAngles ++ "\n" where
+    | otherwise =   "El valor de los angulos son los siguientes: " ++ "\n" ++
+                    "\tTheta P = " ++ show thetaP ++ 
+                    "\n\tTheta Q = " ++ show thetaQ ++
+                    "\n\tTheta R = " ++ show thetaR ++
+                    "\n\tLa suma de los angulos = " ++ show sumofAngles ++ "\n" where
 
                     thetaP = computeAngle3P (x1, y1) (x2, y2) (x3, y3)
                     thetaQ = computeAngle3P (x2, y2) (x3, y3) (x1, y1)
@@ -173,3 +178,58 @@ Function: Verifies if the an angle is internal or external, in the case that the
 verifyInternalAngle x
     | x >= pi = pi - x
     | otherwise = x
+    
+    
+    
+
+main :: IO ()
+main =
+  do
+    putStrLn " ____                                               __                __ __         ___     "
+    putStrLn "/\\  _`\\                                            /\\ \\__            _\\ \\\\ \\__    /'___`\\   "
+    putStrLn "\\ \\ \\L\\ \\ _ __    ___    __  __       __     ___   \\ \\ ,_\\    ___   /\\__  _  _\\  /\\_\\ /\\ \\  "
+    putStrLn " \\ \\ ,__//\\`'__\\ / __`\\ /\\ \\/\\ \\    /'__`\\  /'___\\  \\ \\ \\/   / __`\\ \\/_L\\ \\\\ \\L_ \\/_/// /__ "
+    putStrLn "  \\ \\ \\/ \\ \\ \\/ /\\ \\L\\ \\\\ \\ \\_\\ \\  /\\  __/ /\\ \\__/   \\ \\ \\_ /\\ \\L\\ \\  /\\_   _  _\\   // /_\\ \\"
+    putStrLn "   \\ \\_\\  \\ \\_\\ \\ \\____/ \\/`____ \\ \\ \\____\\\\ \\____\\   \\ \\__\\\\ \\____/  \\/_/\\_\\\\_\\/  /\\______/"
+    putStrLn "    \\/_/   \\/_/  \\/___/   `/___/> \\ \\/____/ \\/____/    \\/__/ \\/___/      \\/_//_/   \\/_____/ "
+    putStrLn "                             /\\___/                                                         "
+    putStrLn "                             \\/__/                                                          "
+    putStrLn "============================================================================================\n"
+    
+
+    
+    
+    putStrLn "\t ====================================== NOTA ==================================="
+    putStrLn "\t|\t      Los puntos en un plano 2D está compuesto por (X,Y)        \t|"
+    putStrLn "\t|\tSe le solicitarán los valores X , Y por separado para cada punto\t|"
+    putStrLn "\t ===============================================================================\n"
+    
+    --------------------INPUT DEL LOS VALORES DEL PRIMER PUNTO
+    putStrLn "\nPrimer Punto."
+    putStrLn "\tIngrese el valor de X para el primer punto: "
+    primerX <- getLine
+    putStrLn "\tIngrese el valor de Y para el primer punto: "
+    primerY <- getLine
+    
+    
+    --------------------INPUT DEL LOS VALORES DEL SEGUNDO PUNTO
+    putStrLn "\nSegundo Punto."
+    putStrLn "\tIngrese el valor de X para el segundo punto: "
+    segundoX <- getLine
+    putStrLn "\tIngrese el valor de Y para el segundo punto: "
+    segundoY <- getLine
+    
+    
+    --------------------INPUT DEL LOS VALORES DEL TERCER PUNTO
+    putStrLn "\nTercer Punto."
+    putStrLn "\tIngrese el valor de X para el tercer punto: "
+    tercerX <- getLine
+    putStrLn "\tIngrese el valor de Y para el tercer punto: "
+    tercerY <- getLine
+    
+    
+    putStrLn "\nResultado:\n"
+    putStrLn $ computeTriangleAngles (read primerX, read primerY) (read segundoX, read segundoY) (read tercerX, read tercerY)
+    
+    
+    
