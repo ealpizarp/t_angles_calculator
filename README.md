@@ -3,9 +3,9 @@
 
 ## Description
 
-An inplementation in the functional paradigm that verifies "Empirically" that R^2
+An implementation in the functional paradigm that verifies "Empirically" that R^2
 is a model of two-dimensional Euclidean geometry. This is made by calculating angles 
-derivitave from the coordinates of three given points in R^2.
+derived from the coordinates of three given points in R^2.
 
 
 ## Prerequisites
